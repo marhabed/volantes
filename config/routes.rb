@@ -1,11 +1,14 @@
 Volantes::Application.routes.draw do
+  resources :addresses
+
+
+  resources :favorite_companies
+
+
   resources :phones
 
 
   resources :favorite_flyers
-
-
-  resources :favorite_companies
 
 
   resources :branches

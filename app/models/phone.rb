@@ -1,3 +1,3 @@
 class Phone < ActiveRecord::Base
-  attr_accessible :code, :description, :number
+  attr_accessible :code, :description, :phone_number
 end

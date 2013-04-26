@@ -2,10 +2,10 @@
 
 one:
   code: MyString
-  number: MyString
-  description: 
+  phone_number: MyString
+  description: MyString
 
 two:
   code: MyString
-  number: MyString
-  description: 
+  phone_number: MyString
+  description: MyString

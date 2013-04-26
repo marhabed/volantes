@@ -3,7 +3,7 @@
 <table>
   <tr>
     <th>Code</th>
-    <th>Number</th>
+    <th>Phone number</th>
     <th>Description</th>
     <th></th>
     <th></th>
@@ -13,7 +13,7 @@
 <% @phones.each do |phone| %>
   <tr>
     <td><%= phone.code %></td>
-    <td><%= phone.number %></td>
+    <td><%= phone.phone_number %></td>
     <td><%= phone.description %></td>
     <td><%= link_to 'Show', phone %></td>
     <td><%= link_to 'Edit', edit_phone_path(phone) %></td>
