@@ -1,0 +1,2 @@
+module FavoriteFlyersHelper
+end

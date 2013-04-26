@@ -1,4 +1,22 @@
 Volantes::Application.routes.draw do
+  resources :phones
+
+
+  resources :favorite_flyers
+
+
+  resources :favorite_companies
+
+
+  resources :branches
+
+
+  resources :companies
+
+
+  resources :flyers
+
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

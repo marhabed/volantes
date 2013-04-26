@@ -1,0 +1,21 @@
+<h1>Listing favorite_flyers</h1>
+
+<table>
+  <tr>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @favorite_flyers.each do |favorite_flyer| %>
+  <tr>
+    <td><%= link_to 'Show', favorite_flyer %></td>
+    <td><%= link_to 'Edit', edit_favorite_flyer_path(favorite_flyer) %></td>
+    <td><%= link_to 'Destroy', favorite_flyer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Favorite flyer', new_favorite_flyer_path %>

@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @flyer.name %>
+</p>
+
+<p>
+  <b>File url:</b>
+  <%= @flyer.file_url %>
+</p>
+
+<p>
+  <b>Active:</b>
+  <%= @flyer.active %>
+</p>
+
+
+<%= link_to 'Edit', edit_flyer_path(@flyer) %> |
+<%= link_to 'Back', flyers_path %>
