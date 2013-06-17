@@ -2,6 +2,7 @@
 
 <table>
   <tr>
+    <th>Branch</th>
     <th>Name</th>
     <th>File url</th>
     <th>Active</th>
@@ -12,6 +13,7 @@
 
 <% @flyers.each do |flyer| %>
   <tr>
+    <td><%= flyer.branch_id %></td>
     <td><%= flyer.name %></td>
     <td><%= flyer.file_url %></td>
     <td><%= flyer.active %></td>

@@ -18,7 +18,7 @@ class FlyersControllerTest < ActionController::TestCase
 
   test "should create flyer" do
     assert_difference('Flyer.count') do
-      post :create, flyer: { active: @flyer.active, file_url: @flyer.file_url, name: @flyer.name }
+      post :create, flyer: { active: @flyer.active, branch_id: @flyer.branch_id, file_url: @flyer.file_url, name: @flyer.name }
     end
 
     assert_redirected_to flyer_path(assigns(:flyer))
@@ -35,7 +35,7 @@ class FlyersControllerTest < ActionController::TestCase
   end
 
   test "should update flyer" do
-    put :update, id: @flyer, flyer: { active: @flyer.active, file_url: @flyer.file_url, name: @flyer.name }
+    put :update, id: @flyer, flyer: { active: @flyer.active, branch_id: @flyer.branch_id, file_url: @flyer.file_url, name: @flyer.name }
     assert_redirected_to flyer_path(assigns(:flyer))
   end
 

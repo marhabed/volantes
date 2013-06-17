@@ -1,0 +1,25 @@
+<h1>Listing flyer_users</h1>
+
+<table>
+  <tr>
+    <th>User</th>
+    <th>Flyer</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @flyer_users.each do |flyer_user| %>
+  <tr>
+    <td><%= flyer_user.user_id %></td>
+    <td><%= flyer_user.flyer_id %></td>
+    <td><%= link_to 'Show', flyer_user %></td>
+    <td><%= link_to 'Edit', edit_flyer_user_path(flyer_user) %></td>
+    <td><%= link_to 'Destroy', flyer_user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Flyer user', new_flyer_user_path %>

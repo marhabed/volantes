@@ -1,0 +1,25 @@
+<%= form_for(@flyer_user) do |f| %>
+  <% if @flyer_user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@flyer_user.errors.count, "error") %> prohibited this flyer_user from being saved:</h2>
+
+      <ul>
+      <% @flyer_user.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :user_id %><br />
+    <%= f.number_field :user_id %>
+  </div>
+  <div class="field">
+    <%= f.label :flyer_id %><br />
+    <%= f.number_field :flyer_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

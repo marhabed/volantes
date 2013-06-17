@@ -1,0 +1,25 @@
+<%= form_for(@branch_flyer) do |f| %>
+  <% if @branch_flyer.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@branch_flyer.errors.count, "error") %> prohibited this branch_flyer from being saved:</h2>
+
+      <ul>
+      <% @branch_flyer.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :branch_id %><br />
+    <%= f.number_field :branch_id %>
+  </div>
+  <div class="field">
+    <%= f.label :flyer_id %><br />
+    <%= f.number_field :flyer_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

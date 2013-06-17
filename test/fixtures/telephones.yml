@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  address_id: 1
+  country_code: 1
+  state_code: 1
+  phone: MyString
+  description: MyString
+
+two:
+  address_id: 1
+  country_code: 1
+  state_code: 1
+  phone: MyString
+  description: MyString

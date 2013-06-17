@@ -1,23 +1,29 @@
 Volantes::Application.routes.draw do
-  resources :addresses
+  resources :users
 
 
-  resources :favorite_companies
+  resources :flyer_users
 
 
-  resources :phones
+  resources :company_users
 
 
-  resources :favorite_flyers
+  resources :branch_flyers
 
 
   resources :branches
 
 
-  resources :companies
-
-
   resources :flyers
+
+
+  resources :telephones
+
+
+  resources :addresses
+
+
+  resources :companies
 
 
   # The priority is based upon order of creation:

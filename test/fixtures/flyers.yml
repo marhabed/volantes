@@ -1,11 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
+  branch_id: 1
   name: MyString
   file_url: MyString
   active: false
 
 two:
+  branch_id: 1
   name: MyString
   file_url: MyString
   active: false

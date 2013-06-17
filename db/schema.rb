@@ -11,9 +11,30 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130426215304) do
+ActiveRecord::Schema.define(:version => 20130617070500) do
+
+  create_table "addresses", :force => true do |t|
+    t.string   "postal_code"
+    t.string   "street"
+    t.string   "number"
+    t.string   "suburb"
+    t.string   "town"
+    t.string   "state"
+    t.string   "country"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+    t.integer  "branch_id"
+  end
+
+  create_table "branch_flyers", :force => true do |t|
+    t.integer  "branch_id"
+    t.integer  "flyer_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "branches", :force => true do |t|
+    t.integer  "company_id"
     t.string   "latitude"
     t.string   "longitude"
     t.datetime "created_at", :null => false
@@ -26,23 +47,22 @@ ActiveRecord::Schema.define(:version => 20130426215304) do
     t.datetime "updated_at", :null => false
   end
 
-  create_table "empresas", :force => true do |t|
-    t.string   "name"
+  create_table "company_users", :force => true do |t|
+    t.integer  "company_id"
+    t.integer  "user_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
 
-  create_table "favorite_companies", :force => true do |t|
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
-  create_table "favorite_flyers", :force => true do |t|
+  create_table "flyer_users", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "flyer_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
 
   create_table "flyers", :force => true do |t|
+    t.integer  "branch_id"
     t.string   "name"
     t.string   "file_url"
     t.boolean  "active"
@@ -50,20 +70,24 @@ ActiveRecord::Schema.define(:version => 20130426215304) do
     t.datetime "updated_at", :null => false
   end
 
-  create_table "phnes", :force => true do |t|
-    t.string   "code"
-    t.string   "phone_number"
+  create_table "telephones", :force => true do |t|
+    t.integer  "address_id"
+    t.integer  "country_code"
+    t.integer  "state_code"
+    t.string   "phone"
     t.string   "description"
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
   end
 
-  create_table "volantes", :force => true do |t|
-    t.string   "nombre"
-    t.string   "url_archivo"
-    t.boolean  "activo"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+  create_table "users", :force => true do |t|
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "email"
+    t.string   "username"
+    t.string   "password"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
 end

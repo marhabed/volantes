@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Branch:</b>
+  <%= @branch_flyer.branch_id %>
+</p>
+
+<p>
+  <b>Flyer:</b>
+  <%= @branch_flyer.flyer_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_branch_flyer_path(@branch_flyer) %> |
+<%= link_to 'Back', branch_flyers_path %>

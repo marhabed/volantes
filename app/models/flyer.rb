@@ -1,3 +1,8 @@
 class Flyer < ActiveRecord::Base
-  attr_accessible :active, :file_url, :name
+  attr_accessible :active, :branch_id, :file_url, :name
+
+  has_many :branch_flyers
+  has_many :flyer_users
+  has_many :branches, through: :branch_flyers
+  has_many :users, through: :flyer_users
 end

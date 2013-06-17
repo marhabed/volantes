@@ -18,7 +18,7 @@ class BranchesControllerTest < ActionController::TestCase
 
   test "should create branch" do
     assert_difference('Branch.count') do
-      post :create, branch: { latitude: @branch.latitude, longitude: @branch.longitude }
+      post :create, branch: { address_id: @branch.address_id, company_id: @branch.company_id, latitude: @branch.latitude, longitude: @branch.longitude }
     end
 
     assert_redirected_to branch_path(assigns(:branch))
@@ -35,7 +35,7 @@ class BranchesControllerTest < ActionController::TestCase
   end
 
   test "should update branch" do
-    put :update, id: @branch, branch: { latitude: @branch.latitude, longitude: @branch.longitude }
+    put :update, id: @branch, branch: { address_id: @branch.address_id, company_id: @branch.company_id, latitude: @branch.latitude, longitude: @branch.longitude }
     assert_redirected_to branch_path(assigns(:branch))
   end
 
