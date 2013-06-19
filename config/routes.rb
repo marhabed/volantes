@@ -1,4 +1,4 @@
-Volantes::Application.routes.draw do
+Volantes::Application.routes.draw do 
   resources :users
 
 
@@ -24,6 +24,8 @@ Volantes::Application.routes.draw do
 
 
   resources :companies
+
+  root to: "starting#index"
 
 
   # The priority is based upon order of creation:
