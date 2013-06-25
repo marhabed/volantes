@@ -54,6 +54,16 @@ ActiveRecord::Schema.define(:version => 20130617070500) do
     t.datetime "updated_at", :null => false
   end
 
+  create_table "favorite_companies", :force => true do |t|
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "favorite_flyers", :force => true do |t|
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "flyer_users", :force => true do |t|
     t.integer  "user_id"
     t.integer  "flyer_id"
