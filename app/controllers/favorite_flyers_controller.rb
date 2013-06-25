@@ -5,7 +5,7 @@ class FavoriteFlyersController < ApplicationController
     @favorite_flyers = FavoriteFlyer.all
 
     respond_to do |format|
-      format.html # index.html.erb
+      format.html # index_.html.erb
       format.json { render json: @favorite_flyers }
     end
   end

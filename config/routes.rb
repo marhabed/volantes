@@ -25,6 +25,7 @@ Volantes::Application.routes.draw do
 
   resources :companies
 
+<<<<<<< HEAD
   resources :users_sessions
   match 'login' => 'users_sessions#new', as: :login
   match 'logout'=> 'users_sessions#destroy', as: :logout
@@ -33,6 +34,16 @@ Volantes::Application.routes.draw do
   root to: 'starting#index'
 
 
+=======
+  resources :sessions
+
+  root to: "starting#index"
+>>>>>>> 93632c53906c58f03ba5ed3137970f92c6755ab3
+
+  match '/signup', to: 'users#new'
+
+  match '/signin',  to: 'sessions#new'
+  match '/signout', to: 'sessions#destroy', via: :delete
 
 
   # The priority is based upon order of creation:

@@ -5,7 +5,7 @@ class CompanyUsersController < ApplicationController
     @company_users = CompanyUser.all
 
     respond_to do |format|
-      format.html # index.html.erb
+      format.html # index_.html.erb
       format.json { render json: @company_users }
     end
   end
