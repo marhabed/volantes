@@ -1,7 +1,11 @@
 Volantes::Application.routes.draw do 
   resources :users
 
+  resources :branches do
+    resources :flyers
+  end
 
+  resources :flyers
   resources :flyer_users
 
 
@@ -12,10 +16,6 @@ Volantes::Application.routes.draw do
 
 
   resources :branches
-
-
-  resources :flyers
-
 
   resources :telephones
 
