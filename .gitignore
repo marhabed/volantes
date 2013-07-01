@@ -20,6 +20,9 @@ doc/
 *~
 .project
 .DS_Store
+.idea/
+*.iml
+*.iws
 bundler_stubs/
 /public/images/
 /public/uploads/
