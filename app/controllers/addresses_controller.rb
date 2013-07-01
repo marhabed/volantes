@@ -5,7 +5,7 @@ class AddressesController < ApplicationController
     @addresses = Address.all
 
     respond_to do |format|
-      format.html # index.html.erb
+      format.html # index_.html.erb
       format.json { render json: @addresses }
     end
   end

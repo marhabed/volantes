@@ -5,7 +5,7 @@ class FlyersController < ApplicationController
     @flyers = Flyer.all
 
     respond_to do |format|
-      format.html # index.html.erb
+      format.html # index_.html.erb
       format.json { render json: @flyers }
     end
   end
