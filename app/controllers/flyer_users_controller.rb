@@ -1,9 +1,9 @@
 class FlyerUsersController < ApplicationController
+  before_filter :authenticate_user!
   # GET /flyer_users
   # GET /flyer_users.json
   def index
     @flyer_users = FlyerUser.all
-
     respond_to do |format|
       format.html # index_.html.erb
       format.json { render json: @flyer_users }

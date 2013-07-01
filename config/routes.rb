@@ -1,6 +1,7 @@
 Volantes::Application.routes.draw do 
-  resources :users
 
+
+  devise_for :users
 
   resources :flyer_users
 
@@ -25,26 +26,25 @@ Volantes::Application.routes.draw do
 
   resources :companies
 
-<<<<<<< HEAD
-  resources :users_sessions
-  match 'login' => 'users_sessions#new', as: :login
-  match 'logout'=> 'users_sessions#destroy', as: :logout
+
+      root :to => "starting#index"
+  devise_scope :user do
+
+    authenticated :user do
+    root :to => "flyer_users#index"
+    end
 
 
-  root to: 'starting#index'
+  # Not logged in
+  root to: "devise/sessions#new"
 
+  match '/sign_in',  to: 'devise/sessions#new',         via: 'get'
+  match '/sign_out', to: 'devise/sessions#destroy',     via: 'delete'
 
-=======
-  resources :sessions
-
-  root to: "starting#index"
->>>>>>> 93632c53906c58f03ba5ed3137970f92c6755ab3
-
-  match '/signup', to: 'users#new'
-
-  match '/signin',  to: 'sessions#new'
-  match '/signout', to: 'sessions#destroy', via: :delete
-
+  # get "sign_in", :to => "devise/sessions#new"
+  # get "sign_out", :to => "devise/sessions#destroy"
+  # get "registrations", to: "devise/registrations#new"
+  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
