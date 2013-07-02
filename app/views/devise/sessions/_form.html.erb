@@ -1,0 +1,7 @@
+<%= simple_form_for(resource, :as => resource_name, :url => session_path(resource_name), class:"navbar-form pull-right") do |f| %>
+
+    <%= f.text_field :email, required: true, autofocus: true, placeholder:"Email" %>
+    <%= f.text_field :password, required: true, autofocus: true, placeholder:"password" %>
+    <%= f.button :submit, "Sign in", class: "btn"%>
+
+<%end%>

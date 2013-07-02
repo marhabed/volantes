@@ -43,7 +43,7 @@
     <breakpoint_rules />
     <ui_properties />
   </component>
-  <component name="IdProvider" IDEtalkID="B501000D8BDBA6FD323158F396CCB914" />
+  <component name="IdProvider" IDEtalkID="EBEF0A72FFE48CD7C966AB102CD94B39" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
     <OptionsSetting value="true" id="Remove" />
@@ -159,6 +159,7 @@
     <states>
       <state key="ProjectJDKs.UI">
         <settings>
+          <last-edited>RVM: ruby-1.9.3-p392</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>

@@ -1,8 +1,8 @@
-class StartingController < ApplicationController
+class StartingController < RootWithoutLoginController
   def index
 
     respond_to do |format|
-      format.html 
+      format.html
     end
   end
 
