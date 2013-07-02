@@ -1,5 +1,5 @@
 class FlyerUsersController < ApplicationController
-  before_filter :authenticate_user!
+
   # GET /flyer_users
   # GET /flyer_users.json
   def index
