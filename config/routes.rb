@@ -26,8 +26,10 @@ Volantes::Application.routes.draw do
 
   resources :companies
 
+  resources :starting
 
-      root :to => "starting#index"
+  root to:  "starting#index"
+
   devise_scope :user do
 
     authenticated :user do
@@ -36,9 +38,10 @@ Volantes::Application.routes.draw do
 
 
   # Not logged in
-  root to: "devise/sessions#new"
+    root to: "starting#index"
 
-  match '/sign_in',  to: 'devise/sessions#new',         via: 'get'
+
+  match '/sign_in',  to: 'starting#index',         via: 'get'
   match '/sign_out', to: 'devise/sessions#destroy',     via: 'delete'
 
   # get "sign_in", :to => "devise/sessions#new"

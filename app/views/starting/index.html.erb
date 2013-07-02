@@ -22,15 +22,25 @@
                   <li class="nav-header">Nav header</li>
                   <li><a href="#">Separated link</a></li>
                   <li><a href="#">One more separated link</a></li>
+
                 </ul>
               </li>
-
+                <% if current_user %>
+                    <li><%= link_to t('sign_out'), sign_out_path, method: "delete" %></li>
+                <% end %>
             </ul>
-            <form class="navbar-form pull-right">
-              <input class="span2" type="text" placeholder="Email">
-              <input class="span2" type="password" placeholder="Password">
-              <button type="submit" class="btn">Sign in</button>
-            </form>
+
+            <div class="navbar-form pull-right">
+              <%= simple_form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+
+                  <%= f.text_field :email,required:true,autofocus: true, placeholder:"Email",class:"span2" %>
+                  <%= f.password_field :password,required:true, placeholder:"Password", class:"span2" %>
+                  <%= f.button :submit, "Sign in", class: "btn"%>
+
+              <%end%>
+            </div>
+
+
           </div><!--/.nav-collapse -->
         </div>
       </div>
