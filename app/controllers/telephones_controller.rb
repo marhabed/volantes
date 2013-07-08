@@ -5,7 +5,7 @@ class TelephonesController < ApplicationController
     @telephones = Telephone.all
 
     respond_to do |format|
-      format.html # index.html.erb
+      format.html # index_.html.erb
       format.json { render json: @telephones }
     end
   end

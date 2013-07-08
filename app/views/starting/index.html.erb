@@ -11,7 +11,7 @@
             <ul class="nav">
               <li class="active"><a href="#">Home</a></li>
               <li><a href="#about">About</a></li>
-              <li><a href="#contact">Contact3</a></li>
+              <li><a href="#contact">Contact</a></li>
               <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
                 <ul class="dropdown-menu">
@@ -22,14 +22,25 @@
                   <li class="nav-header">Nav header</li>
                   <li><a href="#">Separated link</a></li>
                   <li><a href="#">One more separated link</a></li>
+
                 </ul>
               </li>
+                <% if current_user %>
+                    <li><%= link_to t('sign_out'), sign_out_path, method: "delete" %></li>
+                <% end %>
             </ul>
-            <form class="navbar-form pull-right">
-              <input class="span2" type="text" placeholder="Email">
-              <input class="span2" type="password" placeholder="Password">
-              <button type="submit" class="btn">Sign in</button>
-            </form>
+
+            <div class="navbar-form pull-right">
+              <%= simple_form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+
+                  <%= f.text_field :email,required:true,autofocus: true, placeholder:"Email",class:"span2" %>
+                  <%= f.password_field :password,required:true, placeholder:"Password", class:"span2" %>
+                  <%= f.button :submit, "Sign in", class: "btn"%>
+
+              <%end%>
+            </div>
+
+
           </div><!--/.nav-collapse -->
         </div>
       </div>
@@ -41,7 +52,7 @@
       <div class="hero-unit">
         <h1>Hello, world!</h1>
         <p>This is a template for a simple marketing or informational website. It includes a large callout called the hero unit and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
-        <p><a href="#" class="btn btn-primary btn-large">Learn more &raquo;</a></p>
+        <p><a href="/users" class="btn btn-primary btn-large">Learn more &raquo;</a></p>
       </div>
 
       <!-- Example row of columns -->

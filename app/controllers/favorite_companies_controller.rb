@@ -5,7 +5,7 @@ class FavoriteCompaniesController < ApplicationController
     @favorite_companies = FavoriteCompany.all
 
     respond_to do |format|
-      format.html # index.html.erb
+      format.html # index_.html.erb
       format.json { render json: @favorite_companies }
     end
   end

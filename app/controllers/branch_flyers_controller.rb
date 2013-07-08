@@ -5,7 +5,7 @@ class BranchFlyersController < ApplicationController
     @branch_flyers = BranchFlyer.all
 
     respond_to do |format|
-      format.html # index.html.erb
+      format.html # index_.html.erb
       format.json { render json: @branch_flyers }
     end
   end

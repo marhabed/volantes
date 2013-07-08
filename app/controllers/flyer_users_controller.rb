@@ -1,11 +1,11 @@
 class FlyerUsersController < ApplicationController
+
   # GET /flyer_users
   # GET /flyer_users.json
   def index
     @flyer_users = FlyerUser.all
-
     respond_to do |format|
-      format.html # index.html.erb
+      format.html # index_.html.erb
       format.json { render json: @flyer_users }
     end
   end
