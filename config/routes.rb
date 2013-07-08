@@ -31,17 +31,15 @@ Volantes::Application.routes.draw do
 
   resources :starting
 
-  root to:  "starting#index"
-
   devise_scope :user do
 
-    authenticated :user do
-    root :to => "flyer_users#index"
-    end
+  authenticated :user do
+   root :to => "flyer_users#index"
+  end
 
 
   # Not logged in
-    root to: "starting#index"
+  root to: "starting#index"
 
 
   match '/sign_in',  to: 'starting#index',         via: 'get'

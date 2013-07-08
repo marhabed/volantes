@@ -11,9 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-
-ActiveRecord::Schema.define(:version => 20130628222553) do
-
+ActiveRecord::Schema.define(:version => 20130708061537) do
 
   create_table "addresses", :force => true do |t|
     t.string   "postal_code"
@@ -82,6 +80,12 @@ ActiveRecord::Schema.define(:version => 20130628222553) do
     t.datetime "updated_at", :null => false
   end
 
+  create_table "roles", :force => true do |t|
+    t.text     "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "taggings", :force => true do |t|
     t.integer  "tag_id"
     t.integer  "taggable_id"
@@ -122,6 +126,7 @@ ActiveRecord::Schema.define(:version => 20130628222553) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at",                             :null => false
     t.datetime "updated_at",                             :null => false
+    t.integer  "role_id"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
