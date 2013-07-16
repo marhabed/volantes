@@ -11,6 +11,8 @@ class User < ActiveRecord::Base
 
 
   belongs_to :role
+  
+  has_one :company
 
   # To see current_user in Models
   def self.current

@@ -1,28 +1,40 @@
-<h1>Listing flyers</h1>
+<script type="text/javascript">
+			document.write('<style>.noscript { display: none; }</style>');
+		</script>
 
-<table>
-  <tr>
-    <th>Branch</th>
-    <th>Name</th>
-    <th>File url</th>
-    <th>Active</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+<h1>Volantes</h1>
 
-<% @flyers.each do |flyer| %>
-  <tr>
-    <td><%= flyer.branch_id %></td>
-    <td><%= flyer.name %></td>
-    <td><%= flyer.file_url %></td>
-    <td><%= flyer.active %></td>
-    <td><%= link_to 'Show', flyer %></td>
-    <td><%= link_to 'Edit', edit_flyer_path(flyer) %></td>
-    <td><%= link_to 'Destroy', flyer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
-</table>
+
+
+<!-- Start Advanced Gallery Html Containers -->
+				<div id="gallery" class="content">
+					<div id="controls" class="controls"></div>
+					<div class="slideshow-container">
+						<div id="loading" class="loader"></div>
+						<div id="slideshow" class="slideshow"></div>
+					</div>
+					<div id="caption" class="caption-container"></div>
+				</div>
+				<div id="thumbs" class="navigation">
+					<ul class="thumbs noscript">
+						<li>
+							<a class="thumb" name="leaf" href="/images/2538167690_c812461b7b.jpg" title="Title #0">
+								<img src="/images/2538167690_c812461b7b_s.jpg" alt="Title #0" />
+							</a>
+							<div class="caption">
+								<div class="download">
+									<a href="/images/2538183196_8baf9a8015_b.jpg">Download Original</a>
+								</div>
+								<div class="image-title">Title #0</div>
+								<div class="image-desc">Description</div>
+							</div>
+						</li>
+					</ul>
+				</div>
+				<div style="clear: both;"></div>
+			</div>
+		</div>
+	
 
 <br />
 

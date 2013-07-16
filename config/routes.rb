@@ -4,6 +4,9 @@ Volantes::Application.routes.draw do
     resources :flyers
   end
 
+  resources :user do
+    resources :branches
+  end
 
   resources :flyers
 
@@ -34,7 +37,7 @@ Volantes::Application.routes.draw do
   devise_scope :user do
 
   authenticated :user do
-   root :to => "flyer_users#index"
+   root :to => "user_filter#filter_by_role"
   end
 
 
@@ -44,6 +47,7 @@ Volantes::Application.routes.draw do
 
   match '/sign_in',  to: 'starting#index',         via: 'get'
   match '/sign_out', to: 'devise/sessions#destroy',     via: 'delete'
+  match '/images/:filename.:extension' => 'image#serve'
 
   # get "sign_in", :to => "devise/sessions#new"
   # get "sign_out", :to => "devise/sessions#destroy"

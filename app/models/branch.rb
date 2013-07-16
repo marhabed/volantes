@@ -8,5 +8,6 @@ class Branch < ActiveRecord::Base
   has_one :address
 
   has_many :branch_flyers
+  
   has_many :flyers, through: :branch_flyers
 end

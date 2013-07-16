@@ -6,8 +6,4 @@ class ApplicationController < ActionController::Base
 
 end
 
-class RootWithoutLoginController < ApplicationController
-    skip_before_filter :authenticate_user!
 
-
-end
