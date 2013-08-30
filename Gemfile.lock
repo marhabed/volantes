@@ -36,10 +36,10 @@ GEM
       sass (~> 3.2)
     builder (3.0.4)
     cancan (1.6.10)
-    climate_control (0.0.3)
-      activesupport (>= 3.0)
-    cocaine (0.5.1)
-      climate_control (>= 0.0.3, < 1.0)
+    carrierwave (0.9.0)
+      activemodel (>= 3.2.0)
+      activesupport (>= 3.2.0)
+      json (>= 1.7)
     coffee-rails (3.2.2)
       coffee-script (>= 2.2.0)
       railties (~> 3.2.0)
@@ -69,12 +69,6 @@ GEM
     mime-types (1.23)
     multi_json (1.7.2)
     orm_adapter (0.4.0)
-    paperclip (3.4.2)
-      activemodel (>= 3.0.0)
-      activerecord (>= 3.0.0)
-      activesupport (>= 3.0.0)
-      cocaine (~> 0.5.0)
-      mime-types
     polyglot (0.3.3)
     rack (1.4.5)
     rack-cache (1.2)
@@ -103,6 +97,7 @@ GEM
     rake (10.0.4)
     rdoc (3.12.2)
       json (~> 1.4)
+    rmagick (2.13.2)
     sass (3.2.8)
     sass-rails (3.2.6)
       railties (~> 3.2.0)
@@ -137,12 +132,13 @@ DEPENDENCIES
   bcrypt-ruby
   bootstrap-sass
   cancan
+  carrierwave
   coffee-rails (~> 3.2.1)
   devise
   jquery-rails
-  paperclip
   rails (= 3.2.13)
   rails-i18n
+  rmagick
   sass-rails (~> 3.2.3)
   simple_form
   sqlite3

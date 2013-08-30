@@ -2,11 +2,15 @@ class FlyersController < ApplicationController
   # GET /flyers
   # GET /flyers.json
   def index
-    @flyers = Flyer.where("branch_id = #{params[:branch_id]}")
-
+    flyers = Branch.includes(:flyers).find(params[:branch_id]).flyers
+    
+    @map = Hash.new
+    @map["flyers"] = flyers
+    @map["branch_id"] = params[:branch_id]
+    
     respond_to do |format|
       format.html # index_.html.erb
-      format.json { render json: @flyers }
+      format.json { render json: @map }
     end
   end
 
@@ -25,7 +29,10 @@ class FlyersController < ApplicationController
   # GET /flyers/new.json
   def new
     @flyer = Flyer.new
-
+    @branch_id = params[:branch_id]
+    
+    branches = @flyer.branch_flyers.build
+    
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @flyer }

@@ -38,5 +38,7 @@ Volantes::Application.configure do
   config.action_mailer.default_url_options = { :host => 'localhost:3000' }
   
   Rails.configuration.base_dir = "/Users/hector.castro/Documents/cosas/hicl/Ruby/volantes/images/"
+  
+  
 
 end
