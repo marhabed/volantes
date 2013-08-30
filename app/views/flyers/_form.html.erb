@@ -11,9 +11,12 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :branch_id %><br />
-    <%= f.number_field :branch_id %>
+	<div class="field">
+
+		<%= f.fields_for :branch_flyers do |builder| %>    
+	    	<%= builder.hidden_field  :branch_id, value: @branch_id %>
+	    	<%= builder.hidden_field :flyer_id %>
+	  	<% end %>
   </div>
   <div class="field">
     <%= f.label :name %><br />
@@ -26,6 +29,10 @@
   <div class="field">
     <%= f.label :active %><br />
     <%= f.check_box :active %>
+  </div>
+    <div class="field">
+    <%= f.label :image %><br />
+    <%= f.file_field :image %>
   </div>
   <div class="actions">
     <%= f.submit %>

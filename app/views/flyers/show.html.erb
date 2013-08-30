@@ -1,5 +1,7 @@
 <p id="notice"><%= notice %></p>
 
+ <%= image_tag @flyer.image_url.to_s %>
+
 <p>
   <b>Branch:</b>
   <%= @flyer.branch_id %>
@@ -22,4 +24,6 @@
 
 
 <%= link_to 'Edit', edit_flyer_path(@flyer) %> |
-<%= link_to 'Back', flyers_path %>
+<!--%= link_to 'Back', branch_flyers_path(Branch.getBranchById(@flyer.branch_id)) %-->
+
+<%= link_to 'Back', "/branches/#{@flyer.branch_id}/flyers" %>
