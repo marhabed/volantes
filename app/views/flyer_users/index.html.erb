@@ -1,25 +1,81 @@
 <h1>Listing flyer_users</h1>
 
-<table>
-  <tr>
-    <th>User</th>
-    <th>Flyer</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+<ul class="nav nav-tabs">
+  <li class="active"><a href="#home" data-toggle="tab">Todos</a></li>
+  <li><a href="#profile" data-toggle="tab">Favoritos</a></li>
+</ul>
 
-<% @flyer_users.each do |flyer_user| %>
-  <tr>
-    <td><%= flyer_user.user_id %></td>
-    <td><%= flyer_user.flyer_id %></td>
-    <td><%= link_to 'Show', flyer_user %></td>
-    <td><%= link_to 'Edit', edit_flyer_user_path(flyer_user) %></td>
-    <td><%= link_to 'Destroy', flyer_user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
-</table>
+<div class="tab-content">
+  <div class="tab-pane active" id="home">
+  	
+
+  		<!-- Start Advanced Gallery Html Containers -->
+	<div id="gallery" class="content">
+		<div id="controls" class="controls"></div>
+		<div class="slideshow-container">
+			<div id="loading" class="loader"></div>
+			<div id="slideshow" class="slideshow"></div>
+		</div>
+		<div id="caption" class="caption-container"></div>
+	</div>
+	<div id="thumbs" class="navigation">
+		<ul class="thumbs noscript">
+			
+			  <% @flyers.each do |flyer|%>
+				<li>
+					
+					<a class="thumb" name="leaf" href="<%= flyer.image_url.to_s %>" title="Title #0">
+					<%= image_tag flyer.image_url(:thumb).to_s %>
+					</a>
+					<div class="caption">
+
+						<input type="button" id="flyer_<%= flyer.id %>" onclick=" window.volantesFunctions.alerta(this.id)" class="icon-star-empty favs"/>
+						<div class="download">
+							<a href="<%= flyer.image_url.to_s %>">Download Original hicl 2</a>
+						</div>
+						<div class="image-title"><%= flyer.name %></div>
+						<div class="image-desc">Description</div>
+					</div>
+				</li>
+			<% end %>
+		</ul>
+	</div>
+	<div style="clear: both;"></div>
+
+  </div>
+  <div class="tab-pane" id="profile">
+  	
+  	<table>
+	  <tr>
+	    <th>User</th>
+	    <th>Flyer</th>
+	    <th></th>
+	    <th></th>
+	    <th></th>
+	  </tr>
+	
+	<% @flyer_users.each do |flyer_user| %>
+	  <tr>
+	    <td><%= flyer_user.name %></td>
+	    <td><%= flyer_user.file_url %></td>
+	  </tr>
+	<% end %>
+	</table>
+  </div>
+</div>
+
 
 <br />
 
-<%= link_to 'New Flyer user', new_flyer_user_path %>
+<script>
+
+ window.volantesFunctions = {};
+ 
+  window.volantesFunctions.alerta = function(id){
+
+	    alert(id);
+
+  };
+  
+
+</script> 

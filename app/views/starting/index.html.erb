@@ -25,9 +25,9 @@
 
                 </ul>
               </li>
-                <% if current_user %>
-                    <li><%= link_to t('sign_out'), sign_out_path, method: "delete" %></li>
-                <% end %>
+                
+                    <li><%= link_to t('sign_up'), '/users/sign_up', method: "get" %></li>
+               
             </ul>
 
             <div class="navbar-form pull-right">

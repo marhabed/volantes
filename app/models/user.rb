@@ -10,6 +10,9 @@ class User < ActiveRecord::Base
   # attr_accessible :title, :body
 
 
+  has_many :flyer_users
+  has_many :flyers, through: :flyer_users
+
   belongs_to :role
   
   has_one :company

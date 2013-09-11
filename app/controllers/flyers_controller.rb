@@ -28,20 +28,31 @@ class FlyersController < ApplicationController
   # GET /flyers/new
   # GET /flyers/new.json
   def new
-    @flyer = Flyer.new
-    @branch_id = params[:branch_id]
     
-    branches = @flyer.branch_flyers.build
-    
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @flyer }
-    end
+    if !current_user.company.branches.where("branches.id = #{params[:branch_id]}").empty?
+      @flyer = Flyer.new
+      @branch_id = params[:branch_id]
+      
+      branches = @flyer.branch_flyers.build
+      
+      respond_to do |format|
+        format.html # new.html.erb
+        format.json { render json: {flyer: @flyer, branch_id: params[:branch_id]} }
+      end
+    else
+      respond_to do |format|
+        format.html { render  action: "../error/error" }
+      end
+     # format.json { render json: @flyer.errors, status: :unprocessable_entity }  
+     end
   end
 
   # GET /flyers/1/edit
   def edit
+    
+    
     @flyer = Flyer.find(params[:id])
+    @branch_id = params[:branch_id]
   end
 
   # POST /flyers

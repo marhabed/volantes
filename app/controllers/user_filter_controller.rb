@@ -8,6 +8,9 @@ class UserFilterController < ApplicationController
         @branches = current_user.company.branches
        end
       render 'branches/index'
+      
+    else
+         redirect_to flyer_users_path
     end
   end
 end

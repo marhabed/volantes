@@ -3,7 +3,8 @@ class FlyerUsersController < ApplicationController
   # GET /flyer_users
   # GET /flyer_users.json
   def index
-    @flyer_users = FlyerUser.all
+    @flyer_users = current_user.flyers
+    @flyers = Flyer.all
     respond_to do |format|
       format.html # index_.html.erb
       format.json { render json: @flyer_users }
@@ -78,6 +79,25 @@ class FlyerUsersController < ApplicationController
     respond_to do |format|
       format.html { redirect_to flyer_users_url }
       format.json { head :no_content }
+    end
+  end
+  
+  def manage_favs_flyers
+    if params[:flag] == "1"
+      fu = FlyerUser.new
+      fu.user_id = current_user.id
+      fu.flyer_id = params[:flyer_id]
+      
+     respond_to do |format|
+       if fu.save
+           format.json { render json: fu, status: :created, location: @flyer_user }
+       else
+        format.html { redirect_to flyer_users_url }
+        format.json { render json: fu.errors, status: :unprocessable_entity }
+       end
+     end
+    elsif params[:flag] == "2"
+      
     end
   end
 end

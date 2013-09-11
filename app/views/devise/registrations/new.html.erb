@@ -7,7 +7,9 @@
     <%= f.input :email, :required => true, :autofocus => true %>
     <%= f.input :password, :required => true %>
     <%= f.input :password_confirmation, :required => true %>
-    <%= f.input :role_id, required: true%>
+    <!--%= f.input :role_id, required: true%-->
+    <%= f.input :role_id, collection: Role.all, required: false, :label => t(:role),
+     label_method: :name, value_method: :id, prompt: '[Selecciona rol]' %>
   </div>
 
   <div class="form-actions">

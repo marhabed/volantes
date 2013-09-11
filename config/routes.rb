@@ -48,6 +48,7 @@ Volantes::Application.routes.draw do
   match '/sign_in',  to: 'starting#index',         via: 'get'
   match '/sign_out', to: 'devise/sessions#destroy',     via: 'delete'
   match '/images/:filename.:extension' => 'image#serve'
+  match '/flyer_users/favs/:flyer_id/:flag', to: 'flyer_users#manage_favs_flyers', via: 'post'
 
   # get "sign_in", :to => "devise/sessions#new"
   # get "sign_out", :to => "devise/sessions#destroy"
